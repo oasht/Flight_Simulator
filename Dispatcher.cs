@@ -52,6 +52,8 @@ namespace Flight_Simulator
             if (speed > 1000)// Превышение максимальной скорости
             {
                 Clear();
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"button.wav");
+                player.Play();
                 Penalty += 100;
                 WriteLine(str = $"Диспетчер {Name}: Немедленно снизьте скорость!");
                 Record(str);
@@ -75,7 +77,6 @@ namespace Flight_Simulator
             {
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"button.wav");
                 player.Play();
-
                 Penalty += 50;
                 WriteLine(str = $"Диспетчер {Name}: 50 баллов штраф!");
                 Record(str);
